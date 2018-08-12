@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nnu_cms:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="nnu_cms-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="nnu_cms:war exploded" />
+    </root>
+  </artifact>
+</component>
