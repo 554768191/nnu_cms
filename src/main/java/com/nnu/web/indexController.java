@@ -13,7 +13,7 @@ public class indexController {
     @RequestMapping(value = {"/", "index.html"})
     public ModelAndView index(){
         System.out.println(userService.getName(1));
-        return new ModelAndView("index");
+        return new ModelAndView("login");
     }
 
     @Autowired
