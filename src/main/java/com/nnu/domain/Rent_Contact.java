@@ -27,7 +27,7 @@ public class Rent_Contact {
     private double elecPrice;
     private String remark;
 
-    private int state;//合同状态：0表示未审核、1表示通过、2表示未通过、3表示到期或退租
+    private int state;//合同状态：0表示草稿状态、1表示未审核、2表示通过、3表示未通过、4表示到期或退租
     private boolean ifScanFileUpLoad;
     private boolean ifCompanyInfoUpload;
 
