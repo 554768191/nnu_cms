@@ -9,8 +9,11 @@ import java.util.Date;
 
 public class Rent_Contact {
 
+    /*
+    招商部
+     */
     private String contactId;
-    private String department;
+    private String department;//租赁单位
     private String contacts;//联系人
     private String phoneNumber;
     private String companyCategory;
@@ -25,9 +28,23 @@ public class Rent_Contact {
     private Date upTime;
     private double waterPrice;
     private double elecPrice;
+    private int payInterval;
     private String remark;
+    private int workerId1;
 
-    private int state;//合同状态：0表示草稿状态、1表示未审核、2表示通过、3表示未通过、4表示到期或退租
+    /*
+    办公室
+     */
+    private int workerId2;
+    private int propertyNum;
+    private String address;
+    private double registeredCapital;
+    private Date registeredDate;
+    private String businessArea;
+    private String legalPerson;
+
+
+    private int state;//合同状态：0表示草稿状态、1表示未审核、2表示通过、3表示未通过、4表示到期或退租、5表示续租
     private boolean ifScanFileUpLoad;
     private boolean ifCompanyInfoUpload;
 
@@ -189,6 +206,78 @@ public class Rent_Contact {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public int getWorkerId1() {
+        return workerId1;
+    }
+
+    public void setWorkerId1(int workerId1) {
+        this.workerId1 = workerId1;
+    }
+
+    public int getWorkerId2() {
+        return workerId2;
+    }
+
+    public void setWorkerId2(int workerId2) {
+        this.workerId2 = workerId2;
+    }
+
+    public int getPropertyNum() {
+        return propertyNum;
+    }
+
+    public void setPropertyNum(int propertyNum) {
+        this.propertyNum = propertyNum;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public double getRegisteredCapital() {
+        return registeredCapital;
+    }
+
+    public void setRegisteredCapital(double registeredCapital) {
+        this.registeredCapital = registeredCapital;
+    }
+
+    public Date getRegisteredDate() {
+        return registeredDate;
+    }
+
+    public void setRegisteredDate(Date registeredDate) {
+        this.registeredDate = registeredDate;
+    }
+
+    public String getBusinessArea() {
+        return businessArea;
+    }
+
+    public void setBusinessArea(String businessArea) {
+        this.businessArea = businessArea;
+    }
+
+    public String getLegalPerson() {
+        return legalPerson;
+    }
+
+    public void setLegalPerson(String legalPerson) {
+        this.legalPerson = legalPerson;
+    }
+
+    public int getPayInterval() {
+        return payInterval;
+    }
+
+    public void setPayInterval(int payInterval) {
+        this.payInterval = payInterval;
     }
 }
 

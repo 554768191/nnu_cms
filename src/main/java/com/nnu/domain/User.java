@@ -1,10 +1,5 @@
 package com.nnu.domain;
 
-/**
- * @Author shisj
- * @Date: 2018/8/13 10:45
- */
-
 public class User {
     private Integer userid;
 
