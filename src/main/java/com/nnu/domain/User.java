@@ -8,6 +8,13 @@ public class User {
     private String password;
 
     private Integer category;
+    /*
+    0 总经理
+    1 招商部
+    2 办公室
+    3 财务部
+    4 物业部
+     */
 
     public Integer getUserid() {
         return userid;

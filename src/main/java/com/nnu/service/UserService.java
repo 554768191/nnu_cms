@@ -15,6 +15,26 @@ public class UserService {
         return user.getUsername();
     }
 
+    public User findMatch(String userid, String password){
+        int length = userid.length();
+        String id = userid.substring(userid.lastIndexOf('0')+1, length);
+
+        try{
+            System.out.println(id);
+            System.out.println(password);
+            User matchUser = userMapper.selectByPrimaryKey(Integer.parseInt(id));
+
+            if(!matchUser.getPassword().equals(password)){
+                System.out.print("wrong!");
+                return null;
+            }
+            return matchUser;
+        }catch (NumberFormatException e){
+            return null;
+        }
+
+    }
+
     @Autowired
     public void setUserMapper(UserMapper userMapper) {
         this.userMapper = userMapper;
