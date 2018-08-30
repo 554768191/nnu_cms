@@ -1,83 +1,70 @@
 package com.nnu.domain;
 
-/**
- * @Author shisj
- * @Date: 2018/8/14 11:47
- */
-
 import java.util.Date;
 
 public class Rent_Contact {
+    private Integer contactid;
 
-    /*
-    招商部
-     */
-    private String contactId;
-    private String department;//租赁单位
-    private String contacts;//联系人
-    private String phoneNumber;
-    private String companyCategory;
-    private int floor;
-    private int room;
-    private double area;
-    private Date startTime;
-    private Date endTime;
-    private Date payTime;
-    private double perPrice;
-    private double deposit;
-    private Date upTime;
-    private double waterPrice;
-    private double elecPrice;
-    private int payInterval;
+    private String department;
+
+    private String contacts;
+
+    private String phonenumber;
+
+    private String companycategory;
+
+    private Integer floor;
+
+    private Integer room;
+
+    private Double area;
+
+    private Date starttime;
+
+    private Date endtime;
+
+    private Date paytime;
+
+    private Double perprice;
+
+    private Double deposit;
+
+    private Date uptime;
+
+    private Double waterprice;
+
+    private Double elecprice;
+
     private String remark;
-    private int workerId1;
 
-    /*
-    办公室
-     */
-    private int workerId2;
-    private int propertyNum;
+    private Integer workerid1;
+
+    private Integer workerid2;
+
+    private Integer propertynum;
+
     private String address;
-    private double registeredCapital;
-    private Date registeredDate;
-    private String businessArea;
-    private String legalPerson;
 
+    private Double registeredcapital;
 
-    private int state;//合同状态：0表示草稿状态、1表示未审核、2表示通过、3表示未通过、4表示到期或退租、5表示续租
-    private boolean ifScanFileUpLoad;
-    private boolean ifCompanyInfoUpload;
+    private Date registereddate;
 
-    public int getState() {
-        return state;
+    private String businessarea;
+
+    private String legalperson;
+
+    private Integer state;
+
+    private Byte ifscanfileupload;
+
+    private Byte ifcompanyinfoupload;
+
+    public Integer getContactid() {
+        return contactid;
     }
 
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public boolean isIfScanFileUpLoad() {
-        return ifScanFileUpLoad;
-    }
-
-    public void setIfScanFileUpLoad(boolean ifScanFileUpLoad) {
-        this.ifScanFileUpLoad = ifScanFileUpLoad;
-    }
-
-    public boolean isIfCompanyInfoUpload() {
-        return ifCompanyInfoUpload;
-    }
-
-    public void setIfCompanyInfoUpload(boolean ifCompanyInfoUpload) {
-        this.ifCompanyInfoUpload = ifCompanyInfoUpload;
-    }
-
-    public String getContactId() {
-        return contactId;
-    }
-
-    public void setContactId(String contactId) {
-        this.contactId = contactId;
+    public void setContactid(Integer contactid) {
+        this.contactid = contactid;
     }
 
     public String getDepartment() {
@@ -85,7 +72,7 @@ public class Rent_Contact {
     }
 
     public void setDepartment(String department) {
-        this.department = department;
+        this.department = department == null ? null : department.trim();
     }
 
     public String getContacts() {
@@ -93,111 +80,111 @@ public class Rent_Contact {
     }
 
     public void setContacts(String contacts) {
-        this.contacts = contacts;
+        this.contacts = contacts == null ? null : contacts.trim();
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber == null ? null : phonenumber.trim();
     }
 
-    public String getCompanyCategory() {
-        return companyCategory;
+    public String getCompanycategory() {
+        return companycategory;
     }
 
-    public void setCompanyCategory(String companyCategory) {
-        this.companyCategory = companyCategory;
+    public void setCompanycategory(String companycategory) {
+        this.companycategory = companycategory == null ? null : companycategory.trim();
     }
 
-    public int getFloor() {
+    public Integer getFloor() {
         return floor;
     }
 
-    public void setFloor(int floor) {
+    public void setFloor(Integer floor) {
         this.floor = floor;
     }
 
-    public int getRoom() {
+    public Integer getRoom() {
         return room;
     }
 
-    public void setRoom(int room) {
+    public void setRoom(Integer room) {
         this.room = room;
     }
 
-    public double getArea() {
+    public Double getArea() {
         return area;
     }
 
-    public void setArea(double area) {
+    public void setArea(Double area) {
         this.area = area;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getStarttime() {
+        return starttime;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
     }
 
-    public Date getEndTime() {
-        return endTime;
+    public Date getEndtime() {
+        return endtime;
     }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
+    public void setEndtime(Date endtime) {
+        this.endtime = endtime;
     }
 
-    public Date getPayTime() {
-        return payTime;
+    public Date getPaytime() {
+        return paytime;
     }
 
-    public void setPayTime(Date payTime) {
-        this.payTime = payTime;
+    public void setPaytime(Date paytime) {
+        this.paytime = paytime;
     }
 
-    public double getPerPrice() {
-        return perPrice;
+    public Double getPerprice() {
+        return perprice;
     }
 
-    public void setPerPrice(double perPrice) {
-        this.perPrice = perPrice;
+    public void setPerprice(Double perprice) {
+        this.perprice = perprice;
     }
 
-    public double getDeposit() {
+    public Double getDeposit() {
         return deposit;
     }
 
-    public void setDeposit(double deposit) {
+    public void setDeposit(Double deposit) {
         this.deposit = deposit;
     }
 
-    public Date getUpTime() {
-        return upTime;
+    public Date getUptime() {
+        return uptime;
     }
 
-    public void setUpTime(Date upTime) {
-        this.upTime = upTime;
+    public void setUptime(Date uptime) {
+        this.uptime = uptime;
     }
 
-    public double getWaterPrice() {
-        return waterPrice;
+    public Double getWaterprice() {
+        return waterprice;
     }
 
-    public void setWaterPrice(double waterPrice) {
-        this.waterPrice = waterPrice;
+    public void setWaterprice(Double waterprice) {
+        this.waterprice = waterprice;
     }
 
-    public double getElecPrice() {
-        return elecPrice;
+    public Double getElecprice() {
+        return elecprice;
     }
 
-    public void setElecPrice(double elecPrice) {
-        this.elecPrice = elecPrice;
+    public void setElecprice(Double elecprice) {
+        this.elecprice = elecprice;
     }
 
     public String getRemark() {
@@ -205,31 +192,31 @@ public class Rent_Contact {
     }
 
     public void setRemark(String remark) {
-        this.remark = remark;
+        this.remark = remark == null ? null : remark.trim();
     }
 
-    public int getWorkerId1() {
-        return workerId1;
+    public Integer getWorkerid1() {
+        return workerid1;
     }
 
-    public void setWorkerId1(int workerId1) {
-        this.workerId1 = workerId1;
+    public void setWorkerid1(Integer workerid1) {
+        this.workerid1 = workerid1;
     }
 
-    public int getWorkerId2() {
-        return workerId2;
+    public Integer getWorkerid2() {
+        return workerid2;
     }
 
-    public void setWorkerId2(int workerId2) {
-        this.workerId2 = workerId2;
+    public void setWorkerid2(Integer workerid2) {
+        this.workerid2 = workerid2;
     }
 
-    public int getPropertyNum() {
-        return propertyNum;
+    public Integer getPropertynum() {
+        return propertynum;
     }
 
-    public void setPropertyNum(int propertyNum) {
-        this.propertyNum = propertyNum;
+    public void setPropertynum(Integer propertynum) {
+        this.propertynum = propertynum;
     }
 
     public String getAddress() {
@@ -237,47 +224,62 @@ public class Rent_Contact {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address = address == null ? null : address.trim();
     }
 
-    public double getRegisteredCapital() {
-        return registeredCapital;
+    public Double getRegisteredcapital() {
+        return registeredcapital;
     }
 
-    public void setRegisteredCapital(double registeredCapital) {
-        this.registeredCapital = registeredCapital;
+    public void setRegisteredcapital(Double registeredcapital) {
+        this.registeredcapital = registeredcapital;
     }
 
-    public Date getRegisteredDate() {
-        return registeredDate;
+    public Date getRegistereddate() {
+        return registereddate;
     }
 
-    public void setRegisteredDate(Date registeredDate) {
-        this.registeredDate = registeredDate;
+    public void setRegistereddate(Date registereddate) {
+        this.registereddate = registereddate;
     }
 
-    public String getBusinessArea() {
-        return businessArea;
+    public String getBusinessarea() {
+        return businessarea;
     }
 
-    public void setBusinessArea(String businessArea) {
-        this.businessArea = businessArea;
+    public void setBusinessarea(String businessarea) {
+        this.businessarea = businessarea == null ? null : businessarea.trim();
     }
 
-    public String getLegalPerson() {
-        return legalPerson;
+    public String getLegalperson() {
+        return legalperson;
     }
 
-    public void setLegalPerson(String legalPerson) {
-        this.legalPerson = legalPerson;
+    public void setLegalperson(String legalperson) {
+        this.legalperson = legalperson == null ? null : legalperson.trim();
     }
 
-    public int getPayInterval() {
-        return payInterval;
+    public Integer getState() {
+        return state;
     }
 
-    public void setPayInterval(int payInterval) {
-        this.payInterval = payInterval;
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    public Byte getIfscanfileupload() {
+        return ifscanfileupload;
+    }
+
+    public void setIfscanfileupload(Byte ifscanfileupload) {
+        this.ifscanfileupload = ifscanfileupload;
+    }
+
+    public Byte getIfcompanyinfoupload() {
+        return ifcompanyinfoupload;
+    }
+
+    public void setIfcompanyinfoupload(Byte ifcompanyinfoupload) {
+        this.ifcompanyinfoupload = ifcompanyinfoupload;
     }
 }
-
