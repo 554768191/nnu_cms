@@ -15,6 +15,8 @@ public class LoginController {
 
     @RequestMapping(value = {"/", "index.html"})
     public ModelAndView index(){
+        int id = userService.getId("fortune");
+        System.out.println(id);
         return new ModelAndView("login");
     }
 

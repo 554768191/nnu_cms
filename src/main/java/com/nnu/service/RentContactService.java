@@ -1,6 +1,5 @@
 package com.nnu.service;
 
-import com.nnu.dao.Rent_ContactMapper;
 import com.nnu.domain.Rent_Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
