@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nnu.dao.Rent_ContactMapper" >
+  <resultMap id="BaseResultMap" type="com.nnu.domain.Rent_Contact" >
+    <id column="contactid" property="contactid" jdbcType="INTEGER" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
+    <result column="contacts" property="contacts" jdbcType="VARCHAR" />
+    <result column="phonenumber" property="phonenumber" jdbcType="VARCHAR" />
+    <result column="companyCategory" property="companycategory" jdbcType="VARCHAR" />
+    <result column="floor" property="floor" jdbcType="INTEGER" />
+    <result column="room" property="room" jdbcType="INTEGER" />
+    <result column="area" property="area" jdbcType="DOUBLE" />
+    <result column="starttime" property="starttime" jdbcType="TIMESTAMP" />
+    <result column="endtime" property="endtime" jdbcType="TIMESTAMP" />
+    <result column="paytime" property="paytime" jdbcType="TIMESTAMP" />
+    <result column="perprice" property="perprice" jdbcType="DOUBLE" />
+    <result column="deposit" property="deposit" jdbcType="DOUBLE" />
+    <result column="uptime" property="uptime" jdbcType="TIMESTAMP" />
+    <result column="waterprice" property="waterprice" jdbcType="DOUBLE" />
+    <result column="elecprice" property="elecprice" jdbcType="DOUBLE" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="workerid1" property="workerid1" jdbcType="INTEGER" />
+    <result column="workerid2" property="workerid2" jdbcType="INTEGER" />
+    <result column="propertynum" property="propertynum" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="registeredcapital" property="registeredcapital" jdbcType="DOUBLE" />
+    <result column="registereddate" property="registereddate" jdbcType="TIMESTAMP" />
+    <result column="businessArea" property="businessarea" jdbcType="VARCHAR" />
+    <result column="legalperson" property="legalperson" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="ifscanfileupload" property="ifscanfileupload" jdbcType="TINYINT" />
+    <result column="ifcompanyinfoupload" property="ifcompanyinfoupload" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    contactid, department, contacts, phonenumber, companyCategory, floor, room, area, 
+    starttime, endtime, paytime, perprice, deposit, uptime, waterprice, elecprice, remark, 
+    workerid1, workerid2, propertynum, address, registeredcapital, registereddate, businessArea, 
+    legalperson, state, ifscanfileupload, ifcompanyinfoupload
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from rentcontact
+    where contactid = #{contactid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from rentcontact
+    where contactid = #{contactid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nnu.domain.Rent_Contact" >
+    insert into rentcontact (contactid, department, contacts, 
+      phonenumber, companyCategory, floor, 
+      room, area, starttime, 
+      endtime, paytime, perprice, 
+      deposit, uptime, waterprice, 
+      elecprice, remark, workerid1, 
+      workerid2, propertynum, address, 
+      registeredcapital, registereddate, businessArea, 
+      legalperson, state, ifscanfileupload, 
+      ifcompanyinfoupload)
+    values (#{contactid,jdbcType=INTEGER}, #{department,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, 
+      #{phonenumber,jdbcType=VARCHAR}, #{companycategory,jdbcType=VARCHAR}, #{floor,jdbcType=INTEGER}, 
+      #{room,jdbcType=INTEGER}, #{area,jdbcType=DOUBLE}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{endtime,jdbcType=TIMESTAMP}, #{paytime,jdbcType=TIMESTAMP}, #{perprice,jdbcType=DOUBLE}, 
+      #{deposit,jdbcType=DOUBLE}, #{uptime,jdbcType=TIMESTAMP}, #{waterprice,jdbcType=DOUBLE}, 
+      #{elecprice,jdbcType=DOUBLE}, #{remark,jdbcType=VARCHAR}, #{workerid1,jdbcType=INTEGER}, 
+      #{workerid2,jdbcType=INTEGER}, #{propertynum,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
+      #{registeredcapital,jdbcType=DOUBLE}, #{registereddate,jdbcType=TIMESTAMP}, #{businessarea,jdbcType=VARCHAR}, 
+      #{legalperson,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{ifscanfileupload,jdbcType=TINYINT}, 
+      #{ifcompanyinfoupload,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.nnu.domain.Rent_Contact" >
+    insert into rentcontact
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="contactid != null" >
+        contactid,
+      </if>
+      <if test="department != null" >
+        department,
+      </if>
+      <if test="contacts != null" >
+        contacts,
+      </if>
+      <if test="phonenumber != null" >
+        phonenumber,
+      </if>
+      <if test="companycategory != null" >
+        companyCategory,
+      </if>
+      <if test="floor != null" >
+        floor,
+      </if>
+      <if test="room != null" >
+        room,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="starttime != null" >
+        starttime,
+      </if>
+      <if test="endtime != null" >
+        endtime,
+      </if>
+      <if test="paytime != null" >
+        paytime,
+      </if>
+      <if test="perprice != null" >
+        perprice,
+      </if>
+      <if test="deposit != null" >
+        deposit,
+      </if>
+      <if test="uptime != null" >
+        uptime,
+      </if>
+      <if test="waterprice != null" >
+        waterprice,
+      </if>
+      <if test="elecprice != null" >
+        elecprice,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="workerid1 != null" >
+        workerid1,
+      </if>
+      <if test="workerid2 != null" >
+        workerid2,
+      </if>
+      <if test="propertynum != null" >
+        propertynum,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="registeredcapital != null" >
+        registeredcapital,
+      </if>
+      <if test="registereddate != null" >
+        registereddate,
+      </if>
+      <if test="businessarea != null" >
+        businessArea,
+      </if>
+      <if test="legalperson != null" >
+        legalperson,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="ifscanfileupload != null" >
+        ifscanfileupload,
+      </if>
+      <if test="ifcompanyinfoupload != null" >
+        ifcompanyinfoupload,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="contactid != null" >
+        #{contactid,jdbcType=INTEGER},
+      </if>
+      <if test="department != null" >
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenumber != null" >
+        #{phonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="companycategory != null" >
+        #{companycategory,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null" >
+        #{floor,jdbcType=INTEGER},
+      </if>
+      <if test="room != null" >
+        #{room,jdbcType=INTEGER},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=DOUBLE},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null" >
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paytime != null" >
+        #{paytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="perprice != null" >
+        #{perprice,jdbcType=DOUBLE},
+      </if>
+      <if test="deposit != null" >
+        #{deposit,jdbcType=DOUBLE},
+      </if>
+      <if test="uptime != null" >
+        #{uptime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="waterprice != null" >
+        #{waterprice,jdbcType=DOUBLE},
+      </if>
+      <if test="elecprice != null" >
+        #{elecprice,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="workerid1 != null" >
+        #{workerid1,jdbcType=INTEGER},
+      </if>
+      <if test="workerid2 != null" >
+        #{workerid2,jdbcType=INTEGER},
+      </if>
+      <if test="propertynum != null" >
+        #{propertynum,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredcapital != null" >
+        #{registeredcapital,jdbcType=DOUBLE},
+      </if>
+      <if test="registereddate != null" >
+        #{registereddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessarea != null" >
+        #{businessarea,jdbcType=VARCHAR},
+      </if>
+      <if test="legalperson != null" >
+        #{legalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="ifscanfileupload != null" >
+        #{ifscanfileupload,jdbcType=TINYINT},
+      </if>
+      <if test="ifcompanyinfoupload != null" >
+        #{ifcompanyinfoupload,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nnu.domain.Rent_Contact" >
+    update rentcontact
+    <set >
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        contacts = #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenumber != null" >
+        phonenumber = #{phonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="companycategory != null" >
+        companyCategory = #{companycategory,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null" >
+        floor = #{floor,jdbcType=INTEGER},
+      </if>
+      <if test="room != null" >
+        room = #{room,jdbcType=INTEGER},
+      </if>
+      <if test="area != null" >
+        area = #{area,jdbcType=DOUBLE},
+      </if>
+      <if test="starttime != null" >
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null" >
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paytime != null" >
+        paytime = #{paytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="perprice != null" >
+        perprice = #{perprice,jdbcType=DOUBLE},
+      </if>
+      <if test="deposit != null" >
+        deposit = #{deposit,jdbcType=DOUBLE},
+      </if>
+      <if test="uptime != null" >
+        uptime = #{uptime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="waterprice != null" >
+        waterprice = #{waterprice,jdbcType=DOUBLE},
+      </if>
+      <if test="elecprice != null" >
+        elecprice = #{elecprice,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="workerid1 != null" >
+        workerid1 = #{workerid1,jdbcType=INTEGER},
+      </if>
+      <if test="workerid2 != null" >
+        workerid2 = #{workerid2,jdbcType=INTEGER},
+      </if>
+      <if test="propertynum != null" >
+        propertynum = #{propertynum,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredcapital != null" >
+        registeredcapital = #{registeredcapital,jdbcType=DOUBLE},
+      </if>
+      <if test="registereddate != null" >
+        registereddate = #{registereddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessarea != null" >
+        businessArea = #{businessarea,jdbcType=VARCHAR},
+      </if>
+      <if test="legalperson != null" >
+        legalperson = #{legalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="ifscanfileupload != null" >
+        ifscanfileupload = #{ifscanfileupload,jdbcType=TINYINT},
+      </if>
+      <if test="ifcompanyinfoupload != null" >
+        ifcompanyinfoupload = #{ifcompanyinfoupload,jdbcType=TINYINT},
+      </if>
+    </set>
+    where contactid = #{contactid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nnu.domain.Rent_Contact" >
+    update rentcontact
+    set department = #{department,jdbcType=VARCHAR},
+      contacts = #{contacts,jdbcType=VARCHAR},
+      phonenumber = #{phonenumber,jdbcType=VARCHAR},
+      companyCategory = #{companycategory,jdbcType=VARCHAR},
+      floor = #{floor,jdbcType=INTEGER},
+      room = #{room,jdbcType=INTEGER},
+      area = #{area,jdbcType=DOUBLE},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      paytime = #{paytime,jdbcType=TIMESTAMP},
+      perprice = #{perprice,jdbcType=DOUBLE},
+      deposit = #{deposit,jdbcType=DOUBLE},
+      uptime = #{uptime,jdbcType=TIMESTAMP},
+      waterprice = #{waterprice,jdbcType=DOUBLE},
+      elecprice = #{elecprice,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR},
+      workerid1 = #{workerid1,jdbcType=INTEGER},
+      workerid2 = #{workerid2,jdbcType=INTEGER},
+      propertynum = #{propertynum,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      registeredcapital = #{registeredcapital,jdbcType=DOUBLE},
+      registereddate = #{registereddate,jdbcType=TIMESTAMP},
+      businessArea = #{businessarea,jdbcType=VARCHAR},
+      legalperson = #{legalperson,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      ifscanfileupload = #{ifscanfileupload,jdbcType=TINYINT},
+      ifcompanyinfoupload = #{ifcompanyinfoupload,jdbcType=TINYINT}
+    where contactid = #{contactid,jdbcType=INTEGER}
+  </update>
+</mapper>
